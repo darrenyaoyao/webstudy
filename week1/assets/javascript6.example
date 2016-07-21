@@ -1,0 +1,15 @@
+var targetElement = document.getElementById('target');
+
+console.log(targetElement.style.color);
+
+targetElement.style.color = 'red';
+
+console.log(targetElement.className);
+
+targetElement.className = 'new-class';
+
+console.log(targetElement.classList);
+
+targetElement.classList.add('another-class');
+
+targetElement.classList.remove('another-class');
