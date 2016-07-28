@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Javascript ES6</h1>
+				</section>
+				<section>
+					<section>
+						<h2>ES6 是什麼呢</h2>
+					</section>
+					<section>
+						<h3>2015 Javascript最新釋出的技術規格</h3>
+						<h3 class="fragment">對許多語法進行擴增</h3>
+					</section>
+				</section>
+				<section>
+					<section>
+						Arrows
+					</section>
+					<section>
+						<h3>
+							function的語法簡簡潔化
+						</h3>
+						<code class="hljs">
+							<span class="hljs-keyword">
+								var
+							</span>
+							odds = evens.map(v => v + 1);
+						</code>
+					</section>
+					<section>
+						<h3>
+							return值可以直接打
+						</h3>
+						<h3>
+							有超過一行以上的運算則用大括號表示
+						</h3>
+						<code class="hljs dart">
+							<span class="hljs-keyword">
+								var
+							</span>
+							odds = evens.map(v => {
+								console.log("hello")
+								return v + 1
+							});
+						</code>
+					</section>
+					<section>
+						<h3>
+							input直接打在小括號就可以
+						</h3>
+						<code class="hljs dart">
+							<span class="hljs-keyword">
+								var
+							</span>
+							odds = evens.map((v, a) => {
+								console.log("hello")
+								return v + 1
+							});
+						</code>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Class</h3>
+						<code class="hljs dart">
+							<span class="hljs-keyword">
+								class
+							</span>
+							SkinnedMesh extends THREE.Mesh {...}
+						</code>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Matching</h3>
+					</section>
+					<section>
+						<h3>
+							list matching
+						</h3>
+						<code class="hljs">
+							<span class="hljs-keyword">
+								var
+							</span>
+							[a,,b] = [1,2,3]
+						</code>
+					</section>
+					<section>
+						<h3>
+							object matching
+						</h3>
+						<code class="hljs">
+							<span class="hljs-keyword">
+								var
+							</span>
+							{time, date} = getDate()
+						</code>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>
+							Default+Reset+Spread
+						</h3>
+					</section>
+					<section>
+						<code class="hljs">
+							<span class="hljs-keyword">
+								function
+							</span>
+							f(x, y=12) {
+  								return x + y;
+							}<br>
+							f(3) == 15
+						</code>
+					</section>
+					<section>
+						<code class="hljs">
+							<span class="hljs-keyword">
+								function
+							</span>
+							<span>f(x, ...y) {<br>
+							  // y is an Array <br>
+							  return x * y.length;
+							}<br>
+							f(3, "hello", true) == 6
+							</span>
+						</code>
+					</section>
+					<section>
+						<code class="hljs">
+							<span class="hljs-keyword">
+								function
+							</span>
+							<span>f(x, y, z) {
+							  return x + y + z;
+							}<br>
+							// Pass each elem of array as argument<br>
+							f(...[1,2,3]) == 6
+							</span>
+						</code>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
